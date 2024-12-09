@@ -22,6 +22,7 @@ public class JavaLoginSystem {
                 System.out.print(resultSet.getString("passwords") + "\n");
             }
 
+
             connection.close();
 
         } catch (Exception e) {
