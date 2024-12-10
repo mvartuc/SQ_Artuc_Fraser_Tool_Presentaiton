@@ -7,19 +7,24 @@ import com.github.dakusui.jcunit8.runners.junit4.annotations.Condition;
 import com.github.dakusui.jcunit8.runners.junit4.annotations.From;
 import com.github.dakusui.jcunit8.runners.junit4.annotations.Given;
 import com.github.dakusui.jcunit8.runners.junit4.annotations.ParameterSource;
+import org.junit.runners.Parameterized.Parameters;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-
 import java.util.List;
 
 import static java.util.Arrays.asList;
+import static java.util.Collections.emptyList;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(JCUnit8.class)
 public class BankAccountExample {
-
   private BankAccount myAccount;
   private BankAccount anotherAccount = BankAccount.open();
+
+  @Parameters
+  public static List<Object> dummyParametersMethod() {
+    return emptyList();
+  }
 
   @ParameterSource
   public Regex.Factory<String> scenario() {
